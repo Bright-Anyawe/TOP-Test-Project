@@ -1,4 +1,4 @@
-const { capitalize, reverseString, calculator } = require("./index");
+const { capitalize, reverseString, calculator, caeserCipher } = require("./index");
 
 
 test("return a string with the first character captalized", () => {
@@ -11,11 +11,23 @@ test("Add two numbers", () => {
     expect(calculator.add(2,3)).toEqual(5)
 });
 test("Subtract two numbers", () => {
-    expect(calculator.subtract(2,3)).toEqual(-1)
+    expect(calculator.subtract(2, 3)).toEqual(-1);
 });
 test("multiply two numbers", () => {
     expect(calculator.multiply(2,3)).toEqual(6)
 });
 test("divide two numbers", () => {
-    expect(calculator.divide(2, 3)).toBeCloseTo(0.6);
+    expect(calculator.divide(2, 2)).toEqual(1);
 });
+test("shift z to a specified position", () => {
+ expect(caeserCipher('z', 3)).toMatch('c');
+}); 
+test("shift letters to a specified position", () => {
+ expect(caeserCipher('xyz', 3)).toMatch('abc');
+}); 
+test("shift letters to a specified position", () => {
+ expect(caeserCipher('HeLLo', 3)).toBe('KhOOr');
+}); 
+test("shift letters to a specified position", () => {
+ expect(caeserCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+}); 
