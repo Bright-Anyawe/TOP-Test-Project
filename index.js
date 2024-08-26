@@ -44,8 +44,27 @@ for (let i = 0; i < string.length; i++) {
      result += char
   }
 }
-console.log(`result ${result}`)
 return result
 }
 
-module.exports = { capitalize, reverseString, calculator, caeserCipher };
+function analyzeArray (array) {
+  let statistic;
+  
+  
+   return statistic = {
+     average: array.reduce((sum, currentValue) => sum + currentValue, 0) / array.length,
+    min: Math.min(...array),
+    max: Math.max(...array),
+    length: array.length,
+    
+}
+
+}
+
+module.exports = {
+  capitalize,
+  reverseString,
+  calculator,
+  caeserCipher,
+  analyzeArray,
+};
